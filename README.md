@@ -15,3 +15,16 @@ RAG-based-Multimodal-QA-Syste/
 ｜—— requirements.txt         # Python依赖  
 ｜—— README.md                # 项目说明  
 ｜—— .gitignore  
+
+### 1.数据准备
+* 将2000张药品说明书图片放入```data/images```目录
+* 运行```python src/data_processing.py```预处理数据
+
+### 2.训练模型
+* 准备训练数据后运行```python src/train.py```微调LLaVA模型
+
+### 3.启动后端
+```uvicorn src.api:app --reload --host 0.0.0.0 --port 8000```
+
+### 4.启动前端
+```streamlit run frontend/app.py```
