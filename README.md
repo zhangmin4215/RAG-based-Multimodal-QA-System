@@ -1,6 +1,6 @@
 # RAG-based-Multimodal-QA-System
 
-pharma-qa-system/  
+RAG-based-Multimodal-QA-Syste/  
 ｜—— data/                    # 存放药品说明书图片和预处理数据  
 ｜—— models/                  # 存放训练好的模型  
 ｜—— src/  
