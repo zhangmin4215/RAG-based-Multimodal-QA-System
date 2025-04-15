@@ -26,7 +26,7 @@ pip install -r requirements.txt
 # 启动服务
 uvicorn app:app --reload
 
-rag-multimodal-qa/
+RAG-based-Multimodal-QA-System/
 ├── README.md
 ├── requirements.txt
 ├── Dockerfile
