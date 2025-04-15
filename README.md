@@ -25,3 +25,28 @@ pip install -r requirements.txt
 
 # 启动服务
 uvicorn app:app --reload
+
+rag-multimodal-qa/
+├── README.md
+├── requirements.txt
+├── Dockerfile
+├── app.py
+├── config.py
+├── models/
+│   ├── clip_encoder.py
+│   ├── llava_integration.py
+│   ├── text_aligner.py
+│   └── tensorrt_optimizer.py
+├── services/
+│   ├── ocr_service.py
+│   ├── retrieval_service.py
+│   └── qa_service.py
+├── utils/
+│   ├── faiss_manager.py
+│   ├── prompt_templates.py
+│   └── preprocessing.py
+├── data/
+│   ├── sample_docs/  # 示例文档库
+│   └── test_images/   # 测试图片
+├── static/  # 网页静态文件
+└── tests/   # 单元测试
