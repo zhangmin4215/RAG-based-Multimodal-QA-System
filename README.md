@@ -16,7 +16,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/rag-multimodal-qa.git
+git clone https://github.com/zhangmin4215/RAG-based-Multimodal-QA-System.git
 cd RAG-based-Multimodal-QA-System
 
 # 创建conda环境（可选）
