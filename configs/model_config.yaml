@@ -1,0 +1,33 @@
+# 模型配置
+clip:
+  model_name: "openai/clip-vit-base-patch32"
+  device: "cuda:0"
+
+ocr:
+  engine: "paddleocr"
+  lang: "ch"
+  use_angle_cls: true
+  det_model_dir: null
+  rec_model_dir: null
+
+text_embedder:
+  model_name: "BAAI/bge-small-zh-v1.5"
+  normalize_embeddings: true
+
+llava:
+  model_name: "llava-hf/llava-1.5-7b-hf"
+  device_map: "auto"
+  torch_dtype: "auto"
+
+lora:
+  r: 16
+  lora_alpha: 32
+  target_modules: ["q_proj", "v_proj"]
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+retriever:
+  text_weight: 0.6
+  visual_weight: 0.4
+  top_k: 5
