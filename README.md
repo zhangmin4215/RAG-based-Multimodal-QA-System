@@ -14,8 +14,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/rag-multimodal-qa.git
-cd rag-multimodal-qa
+git clone https://github.com/zhangmin4215/RAG-based-Multimodal-QA-System.git
+cd RAG-based-Multimodal-QA-System
 
 # 安装依赖
 pip install -r requirements.txt
