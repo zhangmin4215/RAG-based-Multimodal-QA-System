@@ -1,0 +1,39 @@
+# 数据配置
+data:
+  documents_dir: "data/documents"
+  images_dir: "data/images"
+  ocr_gt_dir: "data/ocr_gt"
+  train_qa_path: "data/train_qa.jsonl"
+  index_path: "data/indices/medical_faiss.index"
+
+# 检索器配置
+retriever:
+  text_encoder: "BAAI/bge-small-zh-v1.5"
+  clip_model: "openai/clip-vit-base-patch32"
+  text_weight: 0.6
+  visual_weight: 0.4
+  top_k: 3
+
+# 生成器配置
+generator:
+  model_name: "llava-hf/llava-1.5-7b-hf"
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.1
+    target_modules: ["q_proj", "v_proj"]
+  max_input_length: 2048
+  max_output_length: 512
+
+# 训练配置
+training:
+  batch_size: 2
+  epochs: 5
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  adam_epsilon: 1e-8
+  max_grad_norm: 1.0
+  warmup_steps: 100
+  save_epochs: 1
+  output_dir: "models/rag_medical"
+  fp16: true
