@@ -1,21 +1,69 @@
-# 基于RAG的图文内容问答系统
+# 基于RAG的多模态图文问答系统
 
-本项目是一个基于检索增强生成(RAG)技术的图文内容问答系统，结合了OCR、CLIP视觉编码和大模型微调技术。
+## 📌 项目概述
 
-## 功能特性
+本系统是一个基于检索增强生成(RAG)技术的多模态问答系统，能够处理图文混合内容并回答用户问题。系统结合了OCR文本提取、CLIP视觉编码和大语言模型，特别针对药品说明书等结构化文档进行了优化。
 
-- 多模态文档处理(图片+文本)
-- 混合检索(文本+视觉)
-- 基于LLaVA的问答引擎
-- LoRA高效微调大模型
-- 药品说明书结构化处理
+**核心功能**：
+- 多模态文档处理（图像+文本）
+- 混合特征检索（文本语义+视觉特征）
+- 动态Prompt优化的问答生成
+- 支持LoRA高效微调大模型
 
-## 快速开始
+## 🚀 快速开始
 
-1. 安装依赖：
-```pip install -r requirements.txt```
+### 环境准备
 
+```bash
+# 克隆仓库
+git clone https://github.com/yourusername/rag-multimodal-qa.git
+cd RAG-based-Multimodal-QA-System
+
+# 创建conda环境（可选）
+conda create -n rag_qa python=3.9
+conda activate rag_qa
+
+# 安装依赖
+pip install -r requirements.txt
 ```
+
+### 数据准备
+
+```bash
+将需要处理的文档图片放入data/documents/目录，支持JPG/PNG格式。
+```
+
+### 启动服务
+```bash
+# 启动后端API服务
+uvicorn src.api.app:app --host 0.0.0.0 --port 8000
+
+# 启动前端Web界面（新终端）
+streamlit run src/web/app.py
+
+访问 http://localhost:8501 使用Web界面
+```
+
+## 🧩 扩展功能
+### 模型微调
+```bash
+python train/finetune_llava.py \
+  --train_data data/train.json \
+  --eval_data data/eval.json \
+  --output_dir models/finetuned
+```
+
+### API调用示例
+```bash
+import requests
+
+response = requests.post(
+    "http://localhost:8000/query",
+    json={"text": "这个药的副作用有哪些？"}
+)
+print(response.json())
+
+
 RAG-based-Multimodal-QA-System/
 ├── configs/                  # 配置文件
 │   ├── model_config.yaml
@@ -49,4 +97,4 @@ RAG-based-Multimodal-QA-System/
 ├── requirements.txt          # Python依赖
 ├── README.md                 # 项目说明
 └── LICENSE
-```
+
