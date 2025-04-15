@@ -1,30 +1,20 @@
-# 多模态RAG图文问答系统
+# 基于RAG的图文内容问答系统
 
-基于RAG技术的图文内容问答系统，整合了CLIP视觉编码、OCR文本识别、LLaVA多模态大模型和FAISS向量检索。
+本项目是一个基于检索增强生成(RAG)技术的图文内容问答系统，结合了OCR、CLIP视觉编码和大模型微调技术。
 
 ## 功能特性
 
-- CLIP+OCR混合检索方案
-- LLaVA-1.5微调模型问答
-- TensorRT加速OCR处理
-- 结构化文本对齐
-- 现代化Web界面
+- 多模态文档处理(图片+文本)
+- 混合检索(文本+视觉)
+- 基于LLaVA的问答引擎
+- LoRA高效微调大模型
+- 药品说明书结构化处理
 
 ## 快速开始
 
+1. 安装依赖：
 ```bash
-# 克隆仓库
-git clone https://github.com/zhangmin4215/RAG-based-Multimodal-QA-System.git
-cd RAG-based-Multimodal-QA-System
-
-# 安装依赖
 pip install -r requirements.txt
-
-# 下载模型权重 (需要手动下载)
-# 放入 models/ 目录
-
-# 启动服务
-uvicorn app:app --reload
 
 RAG-based-Multimodal-QA-System/
 ├── configs/                  # 配置文件
