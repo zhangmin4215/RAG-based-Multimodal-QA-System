@@ -27,26 +27,35 @@ pip install -r requirements.txt
 uvicorn app:app --reload
 
 RAG-based-Multimodal-QA-System/
-├── README.md
-├── requirements.txt
-├── Dockerfile
-├── app.py
-├── config.py
-├── models/
-│   ├── clip_encoder.py
-│   ├── llava_integration.py
-│   ├── text_aligner.py
-│   └── tensorrt_optimizer.py
-├── services/
-│   ├── ocr_service.py
-│   ├── retrieval_service.py
-│   └── qa_service.py
-├── utils/
-│   ├── faiss_manager.py
-│   ├── prompt_templates.py
-│   └── preprocessing.py
-├── data/
-│   ├── sample_docs/  # 示例文档库
-│   └── test_images/   # 测试图片
-├── static/  # 网页静态文件
-└── tests/   # 单元测试
+├── configs/                  # 配置文件
+│   ├── model_config.yaml
+│   └── system_config.yaml
+├── data/                     # 示例数据
+│   ├── images/
+│   └── documents/
+├── docs/                     # 项目文档
+├── scripts/                  # 实用脚本
+├── src/
+│   ├── core/                 # 核心功能
+│   │   ├── __init__.py
+│   │   ├── document_processor.py  # 文档处理
+│   │   ├── retriever.py           # 检索系统
+│   │   └── qa_engine.py           # 问答引擎
+│   ├── models/               # 模型相关
+│   │   ├── clip_encoder.py
+│   │   ├── llava_wrapper.py
+│   │   └── lora_adapter.py
+│   ├── utils/                # 工具函数
+│   │   ├── ocr_tools.py
+│   │   └── text_processing.py
+│   ├── api/                  # API服务
+│   │   ├── app.py
+│   │   └── schemas.py
+│   └── web/                  # Web界面
+│       └── app.py
+├── tests/                    # 单元测试
+├── train/                    # 训练脚本
+│   └── finetune_llava.py
+├── requirements.txt          # Python依赖
+├── README.md                 # 项目说明
+└── LICENSE
