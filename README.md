@@ -13,9 +13,9 @@
 ## 快速开始
 
 1. 安装依赖：
-```bash
-pip install -r requirements.txt```
+```pip install -r requirements.txt```
 
+```
 RAG-based-Multimodal-QA-System/
 ├── configs/                  # 配置文件
 │   ├── model_config.yaml
@@ -49,3 +49,4 @@ RAG-based-Multimodal-QA-System/
 ├── requirements.txt          # Python依赖
 ├── README.md                 # 项目说明
 └── LICENSE
+```
