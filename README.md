@@ -1,30 +1,27 @@
-# RAG-based-Multimodal-QA-System
+# 多模态RAG图文问答系统
 
-RAG-based-Multimodal-QA-Syste/  
-｜—— data/                    # 存放药品说明书图片和预处理数据  
-｜—— models/                  # 存放训练好的模型  
-｜—— src/  
-｜   ｜—— config.py            # 配置文件  
-｜   ｜—— data_processing.py   # 数据处理脚本  
-｜   ｜—— ocr_processor.py     # OCR处理模块  
-｜   ｜—— retrieval.py         # 检索系统  
-｜   ｜—— multimodal_qa.py     # 多模态问答模型  
-｜   ｜—— api.py               # FastAPI后端  
-｜   ｜—— train.py             # 模型训练脚本  
-｜—— frontend/                # Streamlit前端  
-｜—— requirements.txt         # Python依赖  
-｜—— README.md                # 项目说明  
-｜—— .gitignore  
+基于RAG技术的图文内容问答系统，整合了CLIP视觉编码、OCR文本识别、LLaVA多模态大模型和FAISS向量检索。
 
-### 1.数据准备
-* 将2000张药品说明书图片放入```data/images```目录
-* 运行```python src/data_processing.py```预处理数据
+## 功能特性
 
-### 2.训练模型
-* 准备训练数据后运行```python src/train.py```微调LLaVA模型
+- CLIP+OCR混合检索方案
+- LLaVA-1.5微调模型问答
+- TensorRT加速OCR处理
+- 结构化文本对齐
+- 现代化Web界面
 
-### 3.启动后端
-```uvicorn src.api:app --reload --host 0.0.0.0 --port 8000```
+## 快速开始
 
-### 4.启动前端
-```streamlit run frontend/app.py```
+```bash
+# 克隆仓库
+git clone https://github.com/yourusername/rag-multimodal-qa.git
+cd rag-multimodal-qa
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 下载模型权重 (需要手动下载)
+# 放入 models/ 目录
+
+# 启动服务
+uvicorn app:app --reload
