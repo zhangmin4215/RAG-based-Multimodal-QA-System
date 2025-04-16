@@ -25,7 +25,8 @@ conda activate rag_qa
 
 # 安装依赖
 pip install -r requirements.txt
-```
+
+```bash
 
 RAG-based-Multimodal-QA-System/
 ├── configs/                  # 配置文件
